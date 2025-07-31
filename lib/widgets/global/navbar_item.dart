@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:atik_verse/widgets/global/constants.dart';
 
 class NavBarItem {
   final IconData icon;
