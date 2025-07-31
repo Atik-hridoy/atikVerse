@@ -1,3 +1,4 @@
+import 'package:atik_verse/features/projects/projects_view.dart';
 import 'package:flutter/material.dart';
 import 'package:atik_verse/core/utils/responsive_helper.dart';
 import 'package:atik_verse/widgets/global/primary_navbar.dart';
@@ -104,11 +105,22 @@ class _HomeViewState extends State<HomeView> {
                       // ✅ Replace placeholder with actual Intro Section
                       Container(key: introKey, child: const IntroSection()),
 
-                      _buildSection(
-                        projectsKey,
-                        "Projects",
-                        Colors.grey.shade100,
+                      Container(
+                        key: projectsKey,
+                        width: double.infinity,
+                        color: Colors.grey.shade100,
+                        padding: const EdgeInsets.symmetric(
+                          vertical: 40,
+                          horizontal: 20,
+                        ),
+                        child: Center(
+                          child: ConstrainedBox(
+                            constraints: BoxConstraints(maxWidth: 1200),
+                            child: ProjectsView(),
+                          ),
+                        ),
                       ),
+
                       _buildSection(
                         experienceKey,
                         "Experience",
